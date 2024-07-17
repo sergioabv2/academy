@@ -1,459 +1,456 @@
+<html>
+
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
 <link rel="icon" href="https://lh3.googleusercontent.com/d/1L1kLwLAt2KksPG2tN4tT1bRle4RqveWo" type="image/x-icon">
-    <title>Mozart Studio</title>
+    <title>Mozart Studio | Academia de Piano</title>
+
   
-<link href="https://code.ionicframework.com/1.3.3/css/ionic.min.css" rel="stylesheet">
-  <script src="https://code.ionicframework.com/1.3.3/js/ionic.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js">
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+   <link rel="stylesheet" href="https://unpkg.com/swiper@9.2.4/swiper-bundle.min.css">
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 
 </head>
-
- <style>
-
-
-.loadInfo{
-  z-index: 4;
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-
-@media only screen and (min-width: 990px) {
-  .col-md-2{
-    margin-top: 130px;
-    margin-left: -20px;
-  }  
-}
-
-
-
-@keyframes beat-fade {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(2.4);
-  }
   
-  50% {
-    opacity: 0.5;
-    transform: scale(4);
-  }
-}
 
-
-
-
-body {
-  margin: 0;
-  height: 100%;
-  width: 100% !important;
-  box-sizing: border-box;
-}
-
-.backRight {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: #03A9F4;
-}
-
-.backLeft {
-  position: absolute;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: #673AB7;
-}
-
-#back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -999;
-}
-
-.canvas-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
-
-#slideBox {
-  width: 50%;
-  max-height: 100%;
-  height: 100%;
-  overflow: hidden;
-  margin-left: 50%;
-  position: absolute;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.topLayer {
-  width: 200%;
-  height: 100%;
+<style>
+  body {
   position: relative;
-  left: 0;
-  left: -100%;
-}
-
-label {
-  font-size: 0.8em;
-  text-transform: uppercase;
 }
 
 input {
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  font-size: 1em;
-  padding: 8px 1px;
-  margin-top: 0.1em;
+  background-color: #202830!important;
+  color: white!important;
+  margin-bottom: 5px;
+}
+  
+  select{
+    background-color: #202830!important;
+  color: white!important;
+    margin-bottom: 5px;
+  }
+
+#playstore-logo {
+  width: 200px!important;
+  margin: 6%!important;
 }
 
-.left {
-  width: 50%;
-  height: 100%;
-  overflow: scroll;
-  background: #2C3034;
-  left: 0;
-  position: absolute;
-}
-.left label {
-  color: #e3e3e3;
-}
-.left input {
-  border-bottom: 1px solid #e3e3e3;
-  color: #e3e3e3;
-}
-.left input:focus, .left input:active {
-  border-color: #03A9F4;
-  color: #03A9F4;
-}
-.left input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #2C3034 inset;
-  -webkit-text-fill-color: #e3e3e3;
-}
-.left a {
-  color: #03A9F4;
+  
+
+
+.card {
+  background-color: #202830!important;
 }
 
-.right {
-  width: 50%;
-  height: 100%;
-  overflow: scroll;
-  background: #f9f9f9;
-  right: 0;
-  position: absolute;
-}
-.right label {
-  color: #212121;
-}
-.right input {
-  border-bottom: 1px solid #212121;
-}
-.right input:focus, .right input:active {
-  border-color: #673AB7;
-}
-.right input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #f9f9f9 inset;
-  -webkit-text-fill-color: #212121;
-}
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  width: 80%;
-  margin: 0 auto;
+
+.cardp {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
   position: relative;
-}
-
-.content h2 {
-  font-weight: 300;
-  font-size: 2.6em;
-  margin: 0.2em 0 0.1em;
-}
-
-.left .content h2 {
-  color: #03A9F4;
-}
-
-.right .content h2 {
-  color: #673AB7;
-}
-
-.form-element {
-  margin: 1.6em 0;
-}
-.form-element.form-submit {
-  margin: 1.6em 0 0;
-}
-
-.form-stack {
-  display: flex;
-  flex-direction: column;
-}
-
-
-button {
-  padding: 0.8em 1.2em;
-  margin: 0 10px 0 0;
-  width: auto;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1em;
-  color: #fff;
-  line-height: 1em;
-  letter-spacing: 0.6px;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-  border: 0;
-  outline: 0;
+  width: 50%;
+  transition: all ease-in-out 400ms;
   cursor: pointer;
-  transition: all 0.25s;
-}
-button.signup {
-  background: #03A9F4;
-}
-button.login {
-  background: #673AB7;
-}
-button.off {
-  background: none;
-  box-shadow: none;
-  margin: 0;
-}
-button.off.signup {
-  color: #03A9F4;
-}
-button.off.login {
-  color: #673AB7;
 }
 
-button:focus, button:active, button:hover {
-  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-button:focus.signup, button:active.signup, button:hover.signup {
-  background: #0288D1;
-}
-button:focus.login, button:active.login, button:hover.login {
-  background: #512DA8;
-}
-button:focus.off, button:active.off, button:hover.off {
-  box-shadow: none;
-}
-button:focus.off.signup, button:active.off.signup, button:hover.off.signup {
-  color: #03A9F4;
-  background: #212121;
-}
-button:focus.off.login, button:active.off.login, button:hover.off.login {
-  color: #512DA8;
-  background: #e3e3e3;
+.cardp:hover {
+  transform: scale(1.05);
 }
 
-@media only screen and (max-width: 768px) {
-  #slideBox {
-    width: 80%;
-    margin-left: 20%;
-  }
-
-  .signup-info, .login-info {
-    display: none;
-  }
+.cardp:active {
+  transform: translateY(-1px);
 }
 
-
-
-.preloader {
-  position: fixed;
+.card__side {
+  transition: all 0.8s ease;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 99;
+  left: -10px;
+  height: 20vh;
+  width: 20vh;
+  backface-visibility: hidden;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
 }
-#loading {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
-  /* path to your loading animation */
-  background-repeat: no-repeat;
+
+.card__side--front {
+  background-color: #2196f3;
+  position: relative;
   background-position: center;
-  margin: -100px 0 0 -100px;
-}
-
-#loading-text {
-  position: absolute;
-  left: 50%;
-  top: calc(50% + 50px);
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.menuSelectedColor {    
-  border-left: solid 7px #311B92 !important;
-    background-color: #E8E9EE !important;
-  color: #311B92 !important;
-  font-weight:bold;
-}
-
-
-.card{
-  font-family: 'Nunito', sans-serif;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  padding: 14px 80px 18px 36px;
-  cursor: pointer;
-  height: 120px;
-  align-items: center; 
-   display: flex; 
-  text-decoration: none; 
-}
-
-
-.card:hover{
-     transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-}
-
-.list .card h3{
-  font-weight: 600;
-  font-size: 1.7rem;
-  
-}
-
-.card img{
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  max-height: 120px;
-}
-
-.card-1{
-  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
-      background-repeat: no-repeat;
-    background-position: right;
-    background-size: 80px;
-}
-
-.card-2{
-   background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
-      background-repeat: no-repeat;
-    background-position: right;
-    background-size: 80px;
-}
-
-.card-3{
-   background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
-      background-repeat: no-repeat;
-    background-position: right;
-    background-size: 80px;
-}
-
-.card-4{
-   background-image: url(https://i.ibb.co/gFPnF2Y/Captura-de-Pantalla-2024-04-27-a-la-s-23-35-42.png);
-      background-repeat: no-repeat;
-    background-position: right;
-    background-size: 80px;
-}
-
-@media(max-width: 990px){
-  .card{
-    margin: 20px;
-  }
-} 
-
-
- .iframe-container {
-   overflow: hidden;
-            position: relative;
-            overflow: hidden;
-            max-width: 100%;
-            height:  88vh;
-        }
-
-
-        .iframe-container iframe {
-          position: absolute;
-          top: 0;
-        left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-
-
-
-
-
-     
-.documents {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  grid-auto-rows: 214px;
-  grid-gap: 12px;
-  height: auto;
-  background-color: #FFF;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 12px;
-}
-
-.document {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px 0 0;
-  flex-direction: column;
-}
-.document__img {
-  width: 105px;
-  height: 136px;
-
+  background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.document__img:hover {
-  transform: translateY(-4px);
-}
-.document__title {
-  margin: 8px 0 2px;
-  color: #777;
-}
-.document__date {
-  font-size: 10px;
 }
 
-   .drive{
-    height: 450px;
-    width: 100%;
-  }
-  
+.card__side--back {
+  background-color: #303f9f;
+  transform: rotateY(180deg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.showGreen {
+  transform: rotateY(-180deg);
+}
+
+.showRed {
+  transform: rotateY(0);
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  font-size: 24;
+  font-weight: 700;
+}
+
+
+#front-1 {
+  background-image: 
+    url("https://lh3.googleusercontent.com/d/1GGIRHZ6w7Hl-u51og30iqCpOkT3Xc8EC");
+}
+
+#back-1 {
+  background-image: 
+    url("https://lh3.googleusercontent.com/d/1wvSFXvMlQKbyYvqV6L0oFefKFtW0D3lq");
+}
+
+
+
+
+footer {
+  background: black;
+  padding: 15px;
+  position: static!important;
+}
+
+hr {
+  border-top: 1px solid #888!important;
+  border-bottom: 1px solid rgba(0,0,0,0.2)!important;
+}
+
+#services{
+  text-align: center!important;
+  margin-top: 3%!important;
+  margin-bottom: 3%!important;
+}
+
+.jumbotron {
+  background: URL(https://lh3.googleusercontent.com/d/1TL9P_aCf0FXjJSNVEDa1eEQ5pQPW8OO3);
+  background-size: cover;
+  background-position: top;
+  border-radius: 0px!important;
+  text-align: center;
+  margin-top: 55px;
+}
+
+
+
+
+.strong-shadow {
+  text-shadow: 1px 2px 3px black, 0px 8px 13px black, 0px 18px 23px black!important;  
+}
+
+
+
+
+
+
+.row--center{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.row--margin{
+  margin-top:45px;
+}
+
+.row__title{
+  text-align: center;
+  font-size: 26px;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+.row__sub{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px; 
+  color: #8198ae;
+}
+
+.price-box{
+  padding: 0px 25px;  
+}
+
+.price-box__wrap{
+  background-color: #202830!important;;
+  border-radius:6px;
+  box-shadow:  0 4px 8px 0px rgba(0,0,0,0.2); /*0px 22px 20px -10px rgba(0, 0, 0,0.2)*/
+  padding: 35px 35px 40px 35px;
+  text-align:center;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+
+.price-box__img{
+  display: inline-block;
+}
+
+.price-box__img{
+  width:130px;
+  height:130px;
+  border-radius: 15%;
+  margin-bottom: 2.5vw;
+  background-position: center;
+    background-size:cover;
+  background-repeat:no-repeat;
+}
+
+
+
+.price-box--purple .price-box__img{
+  background-image: url("https://i.ibb.co/c8xTZFM/Whats-App-Image-2022-05-27-at-8-42-00-AM.jpg");
+
+}
+
+
+.price-box--violet .price-box__img{
+  background-image: url("https://i.ibb.co/W3bVHyp/Skype-piano-lessons-copy-2-750x750-2.jpg");
+
+}
+
+.price-box--blue .price-box__img{
+  background-image: url("https://lh3.googleusercontent.com/d/1hZaFrumtvmBz_tJXZrm3mmc3dOhE4qjo");
+
+}
+
+.price-box__title{
+  font-size:22px;
+  letter-spacing:1px;
+  margin-bottom:4px;
+}
+
+.price-box__people{
+  font-size:12px;
+  color:#8198ae;
+  font-weight: 300;
+  letter-spacing:1px;
+}
+.price-box__discount{
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.price-box__dollar {
+    font-size: 18px;
+    font-weight: 400;
+    vertical-align: top;
+    margin-right: 4px;
+}
+
+.price-box--purple .price-box__dollar{
+  color: #8a3aff;
+}
+
+.price-box--violet .price-box__dollar{
+  color: #6f79ff;
+}
+
+.price-box--blue .price-box__dollar{
+  color: #3a9fff;
+}
+
+.price-box__discount--light{
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 3px;
+}
+
+.price-box__price {
+    margin-top: 3px;
+    font-size: 15px;
+    color: #8198ae;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    font-weight: 300;
+
+}
+
+.price-box__feat {
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.price-box__list {
+    text-align: left;
+    padding-left: 30px;
+    margin: 0;
+    list-style: none;
+}
+
+.price-box__list-el{
+  position: relative;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.price-box__list-el:before{
+  content: "✓";
+  position: absolute;
+  left: -25px;
+  font-size: 18px;
+  top: -4px;
+}
+
+.price-box--purple .price-box__list-el:before{
+  color: #8a3aff;
+}
+
+.price-box--violet .price-box__list-el:before{
+  color: #6f79ff;
+}
+
+.price-box--blue .price-box__list-el:before{
+  color: #3a9fff;
+}
+
+.price-box__wrap:hover {
+  backface-visibility: hidden;
+  transform: scale(1.05, 1.05);
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+}
+
+
+
+
+
+
+.price-box__wrap:hover .btn {
+  box-shadow: 0px 25px 18px -6px rgba(0, 0, 0,0.2);
+}
+
+.btn--revert{
+    background-color:transparent;
+    color: #8198ae;
+    box-shadow: none;
+    border:1px solid #c9d9e9;
+}
+
+.btn--revert:hover{
+    background-color:transparent;
+    color: #1f4568;
+    box-shadow: none;
+    border:1px solid #8198ae;
+}
+
+
+.btn--purple {
+    background-color: #8a3aff;
+}
+
+.btn--purple:hover{
+    background-color: #b284f6;
+}
+
+.btn--violet {
+    background-color: #6f79ff;
+}
+.btn--violet:hover {
+    background-color: #878ef3;
+}
+
+.btn--blue {
+    background-color: #3a9fff;
+}
+.btn--blue:hover {
+    background-color: #63b2fc;
+}
+.btn--width{
+  width: 120px;
+}
+
+.btn--white{
+  background-color: #fff;
+  border: 1px solid #ededed;
+  color: #8198ae;
+}
+
+.btn--white:hover{
+  background-color: #fff;
+  color: #8198ae;
+}
+
+.price-box__btn {
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    margin-left: -55px;
+}
+
+.row__sub--light{
+  color: #aec0d2;
+}
+.item__img{
+  width:25px;
+  margin-right:10px;
+}
+
+.sect{
+  padding: 90px 0;
+  position: relative;
+  padding-bottom:115px;
+}
+
+
+.contact-info{
+  background-image: url("https://i.ibb.co/yQT891P/Copia-de-Whats-App-Image-2023-01-05-at-14-43-22-2.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: contain;
+}
+
+
+
+.footer__title{
+  font-size: 18px;
+
+display: inline-block;
+line-height: 18px;
+vertical-align: middle;
+  color:#3a9fff;
+}
+
+.footer__light{
+   color:#fff;
+}
+
+
+.isoc {
+  vertical-align: 0.6em;
+}
+
+
   .modal-container {
     position: fixed;
     display: table;
@@ -462,22 +459,23 @@ button:focus.off.login, button:active.off.login, button:hover.off.login {
     top: 0;
     left: 0;
     transform: scale(0);
-    z-index: 1;
+    
   }
+  
 
   .modal-container.four {
-    z-index: 0;
+     z-index: 10;
     transform: scale(1);
   }
 
-  .modal-container.four .modal-background .modalDoc {
+  .modal-container.four .modal-background .modal {
     animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   .modal-container.four + body {
     z-index: 1;
     animation: blowUpContent 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
-  .modal-container.four.out .modal-background .modalDoc {
+  .modal-container.four.out .modal-background .modal {
     animation: blowUpModalTwo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   .modal-container.four.out + body {
@@ -490,24 +488,16 @@ button:focus.off.login, button:active.off.login, button:hover.off.login {
     text-align: center;
     vertical-align: middle;
   }
-  .modal-container .modal-background .modalDoc {
+  .modal-container .modal-background .modal {
     padding: 50px;
     display: inline-block;
     border-radius: 3px;
     font-weight: 300;
     position: relative;
   }
-
-.close-modal {
-    display: block;
-    position: absolute;
-  top: 40px;
-    right: 20px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-}
+  
+  
+  
 
   @keyframes blowUpContent {
     0% {
@@ -550,1348 +540,1702 @@ button:focus.off.login, button:active.off.login, button:hover.off.login {
       opacity: 0;
     }
   }
+
+  .modal-hidden .modal-background {
+    background: transparent;
+  }
   
-</style>
-
-<body>
-
-<section class="loginSection"  style="display: none;">
-  <div id="back">
-    <canvas id="canvas" class="canvas-back"></canvas>
-    <div class="backRight">    
-    </div>
-    <div class="backLeft">
-    </div>
-  </div>
-
-  <div id="slideBox">
-    <div class="topLayer">
-      <div class="left">
-        <div class="content">
-          <h2>Recuperación de contraseña</h2>
-      
-            <div class="form-element form-stack">
-              <label for="recover" class="form-label">Email</label>
-              <input id="recover" type="email" name="recover">
-            </div>
-            <div class="form-element form-stack">
-              <label for="recover2" class="form-label">Confirmar Email</label>
-              <input id="recover2" type="email" name="recover2">
-            </div>
-            <div class="form-element form-submit">
-              <button id="signUp" class="signup" onclick="recover(this)" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Cargando..." name="signup">Enviar correo</button>
-              <button id="goLeft" class="signup off" style="font-size: 13px; margin-top: 10px;">Iniciar sesión</button> 
-            </div>
-            <div style="color: gainsboro; font-weight: 400; font-size: 13px; margin-top: 15px;"> Recibirás un correo con tu contraseña </div>
-        </div>
-      </div>
-    
-      <div class="right">
-        <div class="content">
-          <h2>Inicio de sesión</h2>
-          <div id="form-login">
-            <div class="form-element form-stack">
-              <label for="email-login" class="form-label">Email</label>
-              <input id="email-login" type="email" name="email-login">
-            </div>
-            
-            
-            <div class="form-element form-stack">
-              <label for="password-login" class="form-label">Password</label>
-              <input id="password-login" type="password" name="password-login">
-            </div>
-      
-            <div class="form-element form-submit">
-              <button id="logIn" class="login" onclick="login(this)" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Cargando...">Iniciar sesión</button>
-              <button id="goRight" class="login off" name="signup" style="font-size: 13px; margin-top: 10px;">Recuperar contraseña</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="mainSection" style="display: none;">
-      
- <div ng-app="ionicApp">
-  <div ng-controller="AppCtrl">
-
-<ion-nav-bar class="nav-title-slide-ios bar-stable">
-    <ion-nav-back-button icon="caret-back" style="color: black">regresar
-    </ion-nav-back-button>
-  </ion-nav-bar>
-
-  <ion-nav-view animation="slide-right"></ion-nav-view>
-
-    
-  <script id="menu.html" type="text/ng-template">
-    <ion-side-menus >
-    
-
-      <ion-side-menu side="right" expose-aside-when="large">
-        <ion-header-bar class="bar-stable">
-          <h1 class="title">Menu</h1>
-        </ion-header-bar>
-        <ion-content>
-          <ul class="list">
-            <a href="#/menu/tab/profile" class="item" ng-class="(activeMenuClr=='profile')?'menuSelectedColor':''" ng-click="activeMenuClr = 'profile'" menu-toggle="right" ><i class="ri-home-2-fill"></i>&nbsp&nbspInicio</a>
-               <a href="#/menu/lessons" class="item" ng-class="(activeMenuClr=='lessons')?'menuSelectedColor':''" ng-click="activeMenuClr = 'lessons'" menu-toggle="right"><i class="ri-presentation-fill"></i>&nbsp&nbspLecciones</a>
-       <a href="#/menu/resources" class="item" ng-class="(activeMenuClr=='resources')?'menuSelectedColor':''" ng-click="activeMenuClr = 'resources'" menu-toggle="right"><i class="ri-dashboard-fill"></i>&nbsp&nbspRecursos</a>
-                           <a href="#/menu/library" class="item" ng-class="(activeMenuClr=='library')?'menuSelectedColor':''" ng-click="activeMenuClr = 'library'" menu-toggle="right"><i class="ri-git-repository-fill"></i>&nbsp&nbspBiblioteca</a>
-               <a href="#/menu/chat" class="item" ng-class="(activeMenuClr=='chat')?'menuSelectedColor':''" ng-click="activeMenuClr = 'chat'"  menu-toggle="right"><i class="ri-question-answer-fill"></i>&nbsp&nbspTutor</a>     
-             <a href="#/menu/about" class="item" ng-class="(activeMenuClr=='about')?'menuSelectedColor':''" ng-click="activeMenuClr = 'about'" menu-toggle="right"><i class="ri-file-paper-2-fill"></i>&nbsp&nbspLineamientos</a>
-          </ul>
-        </ion-content>
-    <ion-footer-bar>
- 
-  <button class="button pull-right" ng-click="logout()"><i class="icon ri-logout-box-r-line"></i>Salir</button>
-</ion-footer-bar>
-      </ion-side-menu>
-
-      <ion-side-menu-content >        
-        <ion-nav-view name="menuContent"></ion-nav-view>
-      </ion-side-menu-content>
-
-    </ion-side-menus>
-  </script>    
-    
-  <script id="tabs.html" type="text/ng-template">
-
-      <ion-nav-bar class="bar-stable" >    
-        <ion-nav-buttons side="right">
-          <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()"></button>
-        </ion-nav-buttons>      
-    </ion-nav-bar>   
-
-       <ion-tabs class="tabs-icon-top tabs-stable"  >
-      <ion-tab title="Reel de logros" icon="ion-ribbon-b" href="#/menu/tab/reel">
-        <ion-nav-view name="reel-tab"></ion-nav-view>
-      </ion-tab>
-     <ion-tab title="Perfil" icon="ion-ios-contact-outline" href="#/menu/tab/profile">
-        <ion-nav-view name="profile-tab"></ion-nav-view>
-      </ion-tab>     
-       <ion-tab title="Agenda" icon="ion-android-calendar" href="#/menu/tab/agenda" >
-        <ion-nav-view name="agenda-tab"></ion-nav-view>
-      </ion-tab>
-    </ion-tabs>
-
-  </script>
+  
+  
 
 
-       <script id="reel.html" type="text/ng-template">
-    <ion-view title="Reel de logros">
-      <ion-content >
-       
-        <div class="iframe-container"><iframe src="https://app.mozart.studio/comunity" frameborder="0" allowfullscreen ></iframe></div> 
-    
-      </ion-content>
-    </ion-view>
-  </script>
-
-  <script id="agenda.html" type="text/ng-template">
-    <ion-view title="Agenda">
-      <ion-content>
-       
+.social-bar {
+    display: flex;
+   /* border-radius: 10px;
+    background: black;
+    box-shadow: 0 0 60px rgba(93, 70, 232, 0.15);
+  border: 1px solid#ebe9e9;*/
+  transform: scale(0.8) translate(0, 1px);
+  margin-botom: -100px;
    
-
-       <div class="iframe-container"><iframe id="agendaFrame" src="https://app.mozart.studio/agenda" frameborder="0" allowfullscreen></iframe></div>
-    
-      </ion-content>
-    </ion-view>
-  </script>
-    
-    <script id="profile.html" type="text/ng-template">
-    <ion-view title="Perfil">
-      <ion-content >
- 
-        <div class="iframe-container"><iframe id="profileFrame" src="https://app.mozart.studio/profile" frameborder="0" allowfullscreen></iframe></div> 
-
-      </ion-content>
-    </ion-view>
-  </script>
-
- 
-    
-     <script id="lessons.html" type="text/ng-template">
-    <ion-view title="Lecciones">
-
-      <ion-nav-bar class="bar-stable">
-        <ion-nav-buttons side="right">
-          <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()"></button>
-        </ion-nav-buttons>      
-    </ion-nav-bar>
-
-     <ion-content>
-       
-   <div class="iframe-container"><iframe src="https://app.mozart.studio/lessons" frameborder="0" allowfullscreen></iframe></div>
-
-      </ion-content>
-
-    </ion-view>
-  </script>   
-    
-    
-
-    
-        <script id="chat.html" type="text/ng-template">
-    <ion-view title="Asesoría">
-
-     <ion-nav-bar class="bar-stable">
-        <ion-nav-buttons side="right">
-          <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()"></button>
-        </ion-nav-buttons>      
-    </ion-nav-bar>
-    
-      <ion-content>
-        <div class="iframe-container"><iframe src="https://app.mozart.studio/chat" frameborder="0" allowfullscreen ></iframe></div> 
-      </ion-content>
-    </ion-view>
-  </script>
+}
 
 
-   <script id="resources.html" type="text/ng-template">
-    <ion-view title="Recursos didácticos">
+.social-icons a {
+    border-radius: 50px;
+    color: #3f345f;
+    display: inline-flex; /* Cambia inline-block a inline-flex */
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center;  /* Centra horizontalmente */
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 5px 25px rgba(93, 70, 232, 0.15);
+    margin: 10px 10px;
+    font-size: 22px;
+}
 
-      <ion-nav-bar class="bar-stable">
-        <ion-nav-buttons side="right">
-          <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()"></button>
-        </ion-nav-buttons>      
-    </ion-nav-bar>
 
 
-     <ion-content>
-       
-    <div class="list">
-          <div class="item item-divider">
-            Herramientas
-          </div>  
 
+.slider-nav-item:before {
+    position: absolute;
+    content: "";
+    height: calc(100% + 16px);
+    width: calc(100% + 16px);
+    top: -8px;
+    left: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    animation: 1.5s linear 0s normal none infinite focuse;
+}
+
+
+
+/*socil*/
+.slider-nav{
+        display: flex;
+}
+
+.process-scetion .slider-nav-item {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    text-align: center;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all .4s ease;
+    color: #fff;
+    text-decoration: none;
+}
+  .process-scetion .slider-nav-item:hover {
+    opacity:0.7;
+  }
+.slider-nav-item:before
+{
+        position: absolute;
+    content: "";
+    height: calc(100% + 16px);
+    width: calc(100% + 16px);
+    top: -8px;
+    left: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    animation: 1.5s linear 0s normal none infinite focuse;
+}
+
+    .process-scetion .slider-nav-item:after {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      height: 2px;
+      content: '';
+      width: 100%;
      
-      <a class="item item-avatar" href="#/menu/metronome">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/42/1e/07/421e07cc-b33b-e384-1995-06183618693a/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/460x0w.webp">
-           <h2> Metrónomo</h2>
-     <p> metronome beats </p>
-          </a>
-          
+      z-index: 0;
+      animation: slide 1s linear infinite; }
+    .process-scetion .slider-nav-item:last-child:after {
+      display: none; }
+    .process-scetion .slider-nav-item .ikon {
+      font-size: 50px;
+      line-height: 80px; }
 
-     
-     <a class="item item-avatar" href="#/menu/notereader">
-            <img src="https://play-lh.googleusercontent.com/NzG7u3_0xrBfYdx-_ddIZn9x8VFv5oBtOuMsgpWIZJ8vqB8pWUIUeIMcl-9saY8-N0o=w480-h960-rw">
-           <h2> Lectura de notas </h2>
-     <p> Entrenamiento melódico</p>
-          </a>
-     
 
-      <a class="item item-avatar" href="#/menu/circlefifths">
-            <img src="https://lh3.googleusercontent.com/d/16w1B_HGaZPCaG5uhMjTA824i_uTFcnTF=s100-p">
-           <h2> Círculo de quintas </h2>
-     <p> Entrenamiento armónico</p>
-          </a>
-        
- <a class="item item-avatar" href="#/menu/chords">
-            <img src="https://images.sftcdn.net/images/t_app-icon-m/p/60922fc3-0163-4dbf-8c3d-52d560c712d7/4009110695/chrome-music-lab-Chrome%20Music%20Lab-icon.png">
-           <h2> Chords </h2>
-     <p> Google Chrome Labs</p>
-          </a>
-        
+   
+      .process-scetion .slider-nav-item.active:before {
+        position: absolute;
+        content: "";
+        height: calc(100% + 16px);
+        width: calc(100% + 16px);
+        top: -8px;
+        left: -8px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        animation: 1.5s linear 0s normal none infinite focuse; }
 
-     
-      </ion-content>
+@keyframes focuse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1; }
+  75% {
+    transform: scale(1.2);
+    opacity: 0; }
+  100% {
+    transform: scale(1.2);
+    opacity: 0; } }
+@keyframes slide {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 40px 0; } }
+
+
+
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+
+.jello-horizontal {
+  -webkit-animation: jello-horizontal 0.9s both;
+          animation: jello-horizontal 0.9s both;
+}
+
+.social-bar a:hover i
+{
+  -webkit-animation: jello-horizontal 0.9s both;
+          animation: jello-horizontal 0.9s both;
+}
+
+
+  
+  
+  
+
+
+.swiper-slide-img:hover {
+  cursor: pointer;
+}
+
+.gallery-thumbs .swiper-slide img:hover, .swiper-slide img:hover  {
+    cursor: pointer;
+}
+
+
+  .swiper-pagination-bullet {
+  background: white; /* Cambia el color de las bolitas a blanco */
+}
+
+.swiper-button-prev {
+  position: absolute;
+  transform: translateX(-40%);
+  color: white;
+}
+
+.swiper-button-prev:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.swiper-button-next {
+  position: absolute;
+  transform: translateX(40%);
+  color: white;
+  font-weight: 900;
+
+}
+
+.swiper-button-next:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+
+@media screen and (min-width:800px){
+    #youtube {
+    height: 150px;
+  }
+}
+
+@media screen and (min-width:1000px){
+     #youtube {
+    height: 200px;
+  }
+}
+
+
+@media screen and (min-width:1024px){
+
+    .contact-info{
       
-     
-    </ion-view>
-  </script>   
-
-
-    
-     <script id="metronome.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-       <div class="iframe-container"><iframe src="https://embed.metronome.app/" frameborder="0" allowfullscreen></iframe></div>
-       
-      </ion-content>
-    </ion-view>
-  </script>
-
-
-    
-   <script id="library.html" type="text/ng-template">
-    <ion-view title="Biblioteca de partituras">
-
-      <ion-nav-bar class="bar-stable">
-        <ion-nav-buttons side="right">
-          <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()"></button>
-        </ion-nav-buttons>      
-    </ion-nav-bar>
-
-
-     <ion-content>
-       
-    <div class="list">
-  
-      <a class="item item-avatar" href="#/menu/manuals">
-        <img src="https://lh3.googleusercontent.com/d/13txkyvCE8uBCGu5LJ_-8gA4pRdsmOAAZ=s100-p">
-           <h2> Manuales</h2>
-     <p> Recopilación de tus lecciones </p>
-          </a>
-          
-         <a class="item item-avatar" href="#/menu/repertoire">
-            <img src="https://lh3.googleusercontent.com/d/1mrInm_ro0rby01RhGHFWzTKPTgZ8Xh2Z=s100-p">
-           <h2> Repertorio </h2>
-     <p> Tus piezas finalizadas</p>
-          </a>
-     
-       <a class="item item-avatar" href="#/menu/books">
-            <img src="https://lh3.googleusercontent.com/d/1lMqhDdRYiBKn3yvWXAY-lKGrvbAvwn2o=s100-p">
-           <h2> Métodos </h2>
-     <p> Libros complementarios</p>
-          </a>
-        
-
-     
-      </ion-content>
-      
-     
-    </ion-view>
-  </script>   
-
-
-  
-
-    
-   <script id="manuals.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-        <div class="documents">
-      <div class="document" ng-repeat="manual in manuals" ng-click="showModal($index)">
-        <div class="document__img" ng-style="{'background-image': 'url(' + manual.background + ')'}"></div>
-          <div class="document__title">{{manual.title}}</div>
-         </div>
-     </div>
-  
-
-    <div id="modalPDF" class="modal-container">
-        <div class="modal-background" ng-click="hideModal()">
-            <div class="modalDoc">
-        
-                      <a 
-         href="" 
-         class="close-modal" 
-        >
-         <!-- X close video icon -->
-          <svg 
-            version="1.1" 
-            xmlns="http://www.w3.org/2000/svg" 
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0"
-            y="0"
-            viewBox="0 0 32 32" 
-            style="enable-background:new 0 0 32 32;" 
-            xml:space="preserve" 
-            width="24" 
-            height="24" 
-          >
-                <path fill="#ffffff" d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z" id="Shape"></path>
-                <path fill="#ffffff" d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z" id="Shape"></path>
-          </svg>
-        </a>
-       
-                <iframe class="drive" ng-src="{{trustAsResourceUrl(selectedManualUrl)}}" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-       
-      </ion-content>
-    </ion-view>
-  </script>
-
-
-  
-    
-    
-     <script id="repertoire.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-           <div class="documents">
-      <div class="document" ng-repeat="manual in manuals" ng-click="showModal($index)">
-        <div class="document__img" ng-style="{'background-image': 'url(' + manual.background + ')'}"></div>
-          <div class="document__title">{{manual.title}}</div>
-         </div>
-     </div>
-  
-
-    <div id="modalPDF2" class="modal-container">
-        <div class="modal-background" ng-click="hideModal()">
-            <div class="modalDoc">
-        
-                      <a 
-         href="" 
-         class="close-modal" 
-        >
-         <!-- X close video icon -->
-          <svg 
-            version="1.1" 
-            xmlns="http://www.w3.org/2000/svg" 
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0"
-            y="0"
-            viewBox="0 0 32 32" 
-            style="enable-background:new 0 0 32 32;" 
-            xml:space="preserve" 
-            width="24" 
-            height="24" 
-          >
-                <path fill="#ffffff" d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z" id="Shape"></path>
-                <path fill="#ffffff" d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z" id="Shape"></path>
-          </svg>
-        </a>
-       
-                <iframe class="drive" ng-src="{{trustAsResourceUrl(selectedManualUrl)}}" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-       
-      </ion-content>
-    </ion-view>
-  </script>
-
-
-    <script id="books.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-           <div class="documents">
-      <div class="document" ng-repeat="manual in manuals" ng-click="showModal($index)">
-        <div class="document__img" ng-style="{'background-image': 'url(' + manual.background + ')'}"></div>
-          <div class="document__title">{{manual.title}}</div>
-         </div>
-     </div>
-  
-
-    <div id="modalPDF3" class="modal-container">
-        <div class="modal-background" ng-click="hideModal()">
-            <div class="modalDoc">
-        
-                      <a 
-         href="" 
-         class="close-modal" 
-        >
-         <!-- X close video icon -->
-          <svg 
-            version="1.1" 
-            xmlns="http://www.w3.org/2000/svg" 
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0"
-            y="0"
-            viewBox="0 0 32 32" 
-            style="enable-background:new 0 0 32 32;" 
-            xml:space="preserve" 
-            width="24" 
-            height="24" 
-          >
-                <path fill="#ffffff" d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z" id="Shape"></path>
-                <path fill="#ffffff" d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z" id="Shape"></path>
-          </svg>
-        </a>
-       
-                <iframe class="drive" ng-src="{{trustAsResourceUrl(selectedManualUrl)}}" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-       
-      </ion-content>
-    </ion-view>
-  </script>
-
-
+        height: 250px;
+  display: flex;
+  align-items: flex-end;
+    }
     
 
- <script id="notereader.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-    <div class="iframe-container"><iframe src="https://dashboard.mozart.studio/notereader" frameborder="0" allowfullscreen></iframe></div>
-       
-      </ion-content>
-    </ion-view>
-  </script>
-
-
-
-
- <script id="chords.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-        <div class="iframe-container"><iframe src="https://musiclab.chromeexperiments.com/Chords/" frameborder="0" allowfullscreen ></iframe></div> 
-       
-      </ion-content>
-    </ion-view>
-  </script>
-
-
-
-     <script id="circlefifths.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-   <div class="iframe-container"><iframe src="https://dashboard.mozart.studio/circleoffifths" frameborder="0" allowfullscreen></iframe></div>
-       
-      </ion-content>
-    </ion-view>
-  </script>
+  .jumbotron{
+    
+    height: 550px;
+     background-position: center;
+    margin-top: 5px;
+  }
+  
+  .card__side{
+    top: -20px;
+    left: 30px;
+      height: 30vh;
+  width: 30vh;
+  }
+  
+   .modal-container .modal-background .modal img{
+      width: 55%;
+      height: auto;
+  }
+  
+  input {
+  margin-bottom: 10px;
+}
+  
+  select{
+    margin-bottom: 10px;
+  }
+  
+  /*.modal-container .modal-background .modal card{
+    max-width: 300px;
+  }*/
+  
+  .form-insc{
+    max-width: 750px;
+  }
 
 
+  #drive{
+    height: 480px;
+    width: 380px;
+    margin-top: 30px;
+  }
+ }  
+
+ @media screen and (min-width:1200px){
+    #youtube {
+    height: 250px;
+  }
+}
+  
+
+@media screen and (max-width:1024px){
+  .collapse{
+ display: none;
+}
+  .navbar-toggle {
+    margin: 0;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+  .header__container{
+    width: 100%;
+    padding: 0;
+  }
+  .header__menu {
+    width: 100%;
+}
+  .header{
+    background-color:#fff; 
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+  }
+  .header__logo{
+    padding: 12px 20px 12px 20px;
+  }
+  .header__el {
+    display: block;
+    padding: 10px 20px;
+    border-top: 1px solid #ededed;
+}
+  
+  .header .btn--white, .header .btn--white:hover{
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    color:#fff;
+    background-color:transparent;
+  }
+  .header__el--blue{
+    background-color:#3a9fff;
+  }
+  
+   .modal-container .modal-background .modal img{
+      width: 60%;
+      height: auto;
+  }
+  
+  .form-insc{
+    max-width: 700px;
+  }
+
+  #drive{
+    height: 480px;
+    width: 380px;
+    margin-top: 30px;
+  }
+   
+}
 
 
+@media screen and (max-width:991px){
+  .price-box {
+    padding: 0px 10px;
+  }
+  .item__content {
+    height: auto;
+}
 
-<script id="about.html" type="text/ng-template">
+}
+
+@media screen and (max-width:767px) {
+
+ .price-box__title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+  .price-box__img {
+    width: 90px;
+    height: 90px;
+  }
+  .price-box__wrap {
+    padding: 20px 20px 30px 20px;
+  }
+  .price-box__people {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .price-box__discount {
+    font-size: 22px;
+  }
+  .price-box__price {
+    font-size: 12px;
+  }
+  .price-box__feat {
+      margin-top: 15px;
+      font-size: 14px;
+  }
+  .price-box__list-el {
+    font-size: 12px;
+    margin-bottom: 5px;
+} 
+    .btn {
+    font-size: 12px;
+    margin-left: 5px;
+}
+  .btn--width {
+    width: 100px;
+}
+  .footer {
+    padding: 25px 0;
+  }
+  
+
+  
+   .modal-container .modal-background .modal img{
+      width: 80%;
+      height: auto;
+  }
+
+#youtube {
+    height: 105px;
+  }
+
+  
+  
+}
+
+
+@media screen and (max-width:575px) {
+   .price-box {
+    padding: 0 35px;
+     margin-bottom: 50px;
+  }
+  
+ .price-box__title {
+    font-size:25px;
+  letter-spacing:1px;
+  margin-bottom:4px;
+}
+  .price-box__img {
+    width:130px;
+  height:130px;
+  }
+  .price-box__wrap {
+    background-color: #202830!important;;
+  border-radius:6px;
+  box-shadow:  0 4px 8px 0px rgba(0,0,0,0.2); /*0px 22px 20px -10px rgba(0, 0, 0,0.2)*/
+  padding: 35px 35px 40px 35px;
+  text-align:center;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  }
+  .price-box__people{
+  font-size:12px;
+}
+.price-box__discount{
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+  .price-box__price{
+    font-size: 15px;
+  }
+  .price-box__feat {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.price-box__list-el{
+  position: relative;
+  margin-bottom: 8px;
+  font-weight: 300;
+  font-size: 15px;
+}
+  .btn--width{
+  width: 120px;
+  font-size: 14px;
+}
+  
  
-   <ion-view title="Lineamientos">
 
-      <ion-nav-bar class="bar-stable">
-        <ion-nav-buttons side="right">
-          <button class="button button-icon button-clear ion-navicon" ng-click="toggleRight()"></button>
-        </ion-nav-buttons>      
-    </ion-nav-bar>
+.card__side{
+    top: -20px;
+    
+      height: 16vh;
+  width: 16vh;
+  }
 
-     <ion-content>
-    <div class="list">
-          <a class="item" href="#/menu/regulation">
-            Reglamento
-          </a>
+   .modal-container .modal-background .modal img{
+      width: 100%;
+      height: auto;
+  }
+
+  #youtube {
+    height: 280px;
+  }
+   #drive{
+    height: 400px;
+    width: 100%;
+  }
+  
+  .img-resize{
+    display: none;
+  }
 
 
-          <a class="item" href="#/menu/aboutus">
-           Acerca de
-          </a>
+}
+
+
+
+@media screen and (max-width:340px){
+  .reduce{
+    font-size: 26px;
+  }
+  .price-box {
+    padding: 0px 20px;
+     margin-bottom: 40px;
+  }
+
+  .footer {
+    padding: 15px 0;
+  }
+  .footer__img {
+    width: 15px;
+  }
+  .contact-info{
+  background-size: contain;
+}
+  .footer__title {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  .sect {
+    padding: 20px 0;
+  }
+  .sect--padding-top{
+    padding-top: 80px;
+  }
+  .row__sub {
+    font-size: 16px;
+   }
+  .row__title {
+    font-size: 20px;
+    margin-bottom: 5px;
+   }
+  .price-box__title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+  .price-box__img {
+    width: 100px;
+    height: 100px;
+  }
+  .price-box__wrap {
+    padding: 20px 20px 30px 20px;
+  }
+  .price-box__people {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .price-box__discount {
+    font-size: 22px;
+  }
+  .price-box__price {
+    font-size: 12px;
+  }
+  .price-box__feat {
+      margin-top: 15px;
+      font-size: 14px;
+  }
+  .price-box__list-el {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+  .site__title {
+    font-size: 24px;
+}
+  .site__subtitle {
+    font-size: 18px;
+    margin: 10px 0 20px 0;
+  }
+  .site__img {
+    margin-top: 30px;
+  }
+  .row--margin {
+    margin-top: 30px;
+}
+  .btn {
+    font-size: 12px;
+    padding: 8px 8px;
+}
+  .btn--width {
+    width: 100px;
+}
+ 
+  .text-box {
+  width: 80%;
+  font-size: 18px;
+  font-weight: 500;
+}
+  
+  #youtube {
+    height: 200px;
+  }
+  
+
+  
+
+}
+  
+  @media (max-height: 500px) {
+     .modal-container .modal-background .modal .card{
+      transform: scale(0.9) translate(0,-35px);
+  }
+}
+  
+ 
+</style>
+  
+<body data-spy="scroll" data-target="#navbar" data-offset="70" class="bg-dark text-light">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Mozart Studio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Servicios <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#payment">Planes de pago</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Informes</a>
+        </li>
+      </ul>
+
+      <div class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="email" placeholder="Usuario">
+        <input class="form-control mr-sm-2" type="password" placeholder="Contraseña">
+        <button class="btn btn-outline-light my-2 my-sm-0" href="https://app.mozart.studio">Ingresar</button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="jumbotron" class="jumbotron text-light">
+
+      <h1 class="strong-shadow" style="text-align: center; font-size: 13vw;">Mozart Studio</h1>
+      
+<br><br><br><br><br>
+   
+      <div class="cardp" onclick="toggleCard()">
+          <div class="card__side card__side--front" id="front-1">
+          </div>
+          <div class="card__side card__side--back" id="back-1">     
+          </div>
+      </div>  
+           
+  </div>
+
+  
+  
+  
+  <div id="services" class="container">
+    <h1 class="reduce">Inovamos la educación musical</h1>
+    <p id="summary-paragraph">Razones por las que Mozart Studio es tu mejor opción</p>
+  </div>
+  <div class="container">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://lh3.googleusercontent.com/d/1VoRvfiHUpjUJUhDmzvD02QhBWN0m0Lnh" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><i class="ri-award-fill"></i> Calidad de conservatorio</h5>
+          <p class="card-text">Nuestra academia ofrece una educación musical efectiva y de excelencia. Nuestros profesores capacitados te guiarán en cada paso de tu formación.</p>
+        </div>
+      </div> 
+
+
+      <div class="card">
+        <div class="card-img-top"> 
+          <div class="swiper swiper-container-main">
+    <div class="swiper-wrapper">
+       <div class="swiper-slide minimum-height"><img class="card-img-top swiper-slide-img" src="https://lh3.googleusercontent.com/d/1pzqojF02mq_cC9mvJsz-Tt-GP3eZcldD"></div>
+     <div class="swiper-slide minimum-height"><img class="card-img-top swiper-slide-img" src="https://lh3.googleusercontent.com/d/13GWDN862fWBqSWRZvboeHEWqeGzCtcyu"></div> 
+      <div class="swiper-slide minimum-height"><img class="card-img-top swiper-slide-img" src="https://lh3.googleusercontent.com/d/1WPV4G0xb_CQUMiiq9bby2C80hnvErplR"></div>
+      <div class="swiper-slide minimum-height"><img class="card-img-top swiper-slide-img" src="https://lh3.googleusercontent.com/d/1i9CIMoY2uKv5WKw7EHUYn_FRyafasDnL"></div>
+       
+      <div class="swiper-slide minimum-height"><img class="card-img-top swiper-slide-img" src="https://lh3.googleusercontent.com/d/1xx4RgzHVS1PJC_Y8hrerYKOzg8tfEMmh"></div>
+      <div class="swiper-slide minimum-height"><img class="card-img-top swiper-slide-img" src="https://lh3.googleusercontent.com/d/1oz_MUQCq-0cSMJ0gOWR45CUNI2EVWaTy"></div>
+     
+      
+
+      
+
+
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+      <!-- Swiper thumbnails -->
+<div class="swiper gallery-thumbs">
+  <div class="swiper-wrapper">
+  </div>       
+</div>     
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><i class="ri-building-fill"></i> Instalaciones equipadas</h5>
+          <p class="card-text">Disfruta de nuestras instalaciones completamente equipadas con pianos de alta calidad y tecnología integrada de nuestra propia autoría.  </p>
+        </div>
+      </div>
+
+ <div class="card">
+         <img class="card-img-top button" src="https://lh3.googleusercontent.com/d/1XvXn7m5uhpToi1ZvaOo4ilBTLZJPyAfN" alt="Card image cap" data-modal="modal2">
+        <div class="card-body">
+          <h5 class="card-title"><i class="ri-calendar-schedule-fill"></i> Horarios flexibles  <div class="img-resize" style="font-size: 15px;">    (Da click en la imagen para ampliarla) </div></h5>
+        
+          <p class="card-text">
+        Nos adaptamos a tu disponibilidad con horarios flexibles que se ajustan a tu rutina. Ya sea clases matutinas, vespertinas o fines de semana, tenemos un horario para ti. </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="card-deck">
+
+      <div class="card">
+        <img class="card-img-top" src="https://lh3.googleusercontent.com/d/1nDZsSdIct2LvW2KC44UX2zMImK_OnaXL" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><i class="ri-discount-percent-line"></i> Costos accesibiles</h5>
+          <p class="card-text">Ofrecemos distintos planes de pago según la cantidad de sesiones que desees tomar. ¿Vives lejos? Plan híbrido. ¿Quieres avanzar más rápido? Plan premium. ¡Encuentra tu plan ideal!.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <iframe class="card-img-top" id="youtube" src="https://www.youtube.com/embed/f0TeYaXzSjk?&autoplay=1" > </iframe>
+        <div class="card-body">
+          <h5 class="card-title"><i class="ri-vidicon-2-fill"></i> Participación en eventos</h5>
+          <p class="card-text">Participa en recitales, concursos y presentaciones en auditorios y en nuestras instalaciones. Te promocionamos en nuestras redes.</p>
+        </div>
+      </div>
+
+      <div class="card activate-content">
+        <img class="card-img-top button" data-modal="modal1" src="https://lh3.googleusercontent.com/d/1zFBZ558bRQjXIQWEtQPxWl56eonZNbtr" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><i class="ri-git-repository-fill"></i> Material de calidad<div style="font-size: 14px;">    (Da click en la imagen para consultar nuestro plan de trabajo) </div></h5>
+          <p class="card-text">
+          
+            Te proporcionamos los recursos didácticos mas actuales para garantizarte un aprendizaje efectivo. Te preparamos para la certificación del programa ABRSM.</p>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+  <div class="sect sect--padding-bottom" >
+    <div class="container" id="payment">
+
+      <div class="container text-center">
+        <h1>Planes de pago</h1>
+        <p>Tenemos a tu disposición distintos formatos de enseñanza</p>
+      </div>
+     <div class="row row--center row--margin">
+      
+ <!-- First -->
+<div class="col-md-4 col-sm-4 price-box price-box--blue">
+          <div class="swiper swiper-container-main">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Plan Standard
+          </h1>
+  <p class="price-box__people">
+            Clases Presenciales
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>450<span class="price-box__discount--light">/mes</span>
+          </h2>
+          <h3 class="price-box__price">
+           Aprox. $112 por clase
+          </h3>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+            <li class="price-box__list-el">4 clases de 1 hora</li>
+            <li class="price-box__list-el">1 clase a la semana</li>
+          <li class="price-box__list-el">Acceso a la app</li>
+<br>
+          </ul>
+        <!---    <a class="btn btn--blue btn--width button" style="color: white;" data-modal="modal3">Agendar</a> --->
+          <a class="btn btn--blue btn--width button" style="color: white;" href="https://www.mozart.studio/inscripciones">Agendar</a>
+        </div>
+
+      </div>
+
+
+      <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Plan PRO
+          </h1>
+ <p class="price-box__people">
+            Clases Presenciales
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>750<span class="price-box__discount--light">/mes</span>
+          </h2>
+          <h3 class="price-box__price">
+           Aprox. $93 por clase
+          </h3>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+            <li class="price-box__list-el">8 clases de 1 hora</li>
+            <li class="price-box__list-el">2 clases a la semana</li>
+          <li class="price-box__list-el">Acceso a la app</li>
+             <li class="price-box__list-el">Reserva de pianos para prácticas</li>
+<br>
+          </ul>
+      
+            <a class="btn btn--blue btn--width button" style="color: white;" href="https://www.mozart.studio/inscripciones">Agendar</a>     
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Plan PREMIUM
+          </h1>
+ <p class="price-box__people">
+            Clases Presenciales
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>1350<span class="price-box__discount--light">/mes</span>
+          </h2>
+          <h3 class="price-box__price">
+           Aprox. $84 por clase
+          </h3>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+            <li class="price-box__list-el">8 Clases de 2 horas</li>
+            <li class="price-box__list-el">4 horas a la semana</li>
+         <li class="price-box__list-el">Acceso a la app</li>
+             <li class="price-box__list-el">Reserva de pianos para prácticas</li>
+             <li class="price-box__list-el">Chat de asesoría en la app</li>
+<br>
+          </ul>
+      
+            <a class="btn btn--blue btn--width button" style="color: white;" href="https://www.mozart.studio/inscripciones">Agendar</a>        
+        </div>
+      </div>
+
+
+     </div> 
+
+
+       <div class="swiper-pagination"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
 </div>
-      </ion-content>
-    </ion-view>
-  </script>   
-
-
-
-  <script id="regulation.html" type="text/ng-template">   
-    <ion-view>
-        <ion-content>
-            <ion-back-button></ion-back-button>
-
-            <ion-list>
-                <div ng-repeat="group in groups">
-                    <ion-item class="item-stable item-icon-right" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
-                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'" style="font-size:20px;"></i>
-                        &nbsp;
-                       {{group.heading}}
-                    </ion-item>
-                    <div class="item-accordion" ng-show="isGroupShown(group)">
-                        <div class="list">
-                            <div ng-repeat="bodyitem in group.body">
-                                <a class="item" ng-click="toggleDetail(bodyitem)">
-                  {{ bodyitem.no }}  {{bodyitem.name}}
-                                </a>
-                                <div ng-show="isDetailShown(bodyitem)">
-                                <div class="list card card-4" style="height: 100%;">
-        <div class="item item-body">
-     <p> {{ bodyitem.text }}</p>
-         </div> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ion-list>
-        </ion-content>
-    </ion-view>
-</script>
-
-
-
-   <script id="aboutus.html" type="text/ng-template">   
-       <ion-view>
-      <ion-content >
-
-          <ion-back-button></ion-back-button>
-
-        <h2>Acerca de</h2>
- 
-      </ion-content>
-    </ion-view>
-  </script>
-
-
-
-
-
-
-
-  <script id="modal.html" type="text/ng-template">
-    <div class="modal">
-      <ion-header-bar class="bar bar-header bar-positive">
-        <h1 class="title">Modal</h1>
-        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
-      </ion-header-bar>
+</div>
       
-      <ion-content class="padding">
-        <div class="list">
-          <label class="item item-input">
-            <span class="input-label">To</span>
-            <input type="text">
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Message</span>
-            <textarea rows="4"></textarea>
-          </label>
+
+      <!-- second -->
+
+        <div class="col-md-4 col-sm-4 price-box price-box--violet">
+          <div class="swiper swiper-container-main">
+    <div class="swiper-wrapper">
+      
+<div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Curso Asíncrono
+          </h1>
+ <p class="price-box__people">
+           Seguimiento en Línea
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>150<span class="price-box__discount--light">/mes</span>
+          </h2>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+           <li class="price-box__list-el">Acceso a la app</li>
+              <li class="price-box__list-el">Seguimiento y asesoría en línea</li>
+<br>
+          </ul>
+      
+         <!---   <a class="btn btn--violet btn--width button" style="color: white;" data-modal="modal4">Agendar</a> --->
+         
+          
+           <a class="btn btn--violet btn--width button" style="color: white;"  href="https://wa.me/5215577676657">Agendar</a>
+          
         </div>
-        <button class="button icon icon-right ion-arrow-right-c button-balanced button-block">Send</button>
-      </ion-content>
+
+      </div>
+
+      <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Clases Híbridas
+          </h1>
+ <p class="price-box__people">
+          Seguimiento en línea
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>250<span class="price-box__discount--light">/mes</span>
+          </h2>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+              <li class="price-box__list-el">Acceso a la app</li>
+              <li class="price-box__list-el">Seguimiento y asesoría en línea</li>
+            <li class="price-box__list-el">1 clase presencial mensual</li>
+             
+          
+         
+<br>
+          </ul>
+      
+            <a class="btn btn--violet btn--width button" style="color: white;"  href="https://wa.me/5215577676657">Agendar</a>
+          
+        </div>
+
+      </div>
+      
+      
+      <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+          Clases por ZOOM
+          </h1>
+  <p class="price-box__people">
+            Clases en línea por ZOOM
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>300<span class="price-box__discount--light">/mes</span>
+          </h2>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+            <li class="price-box__list-el">4 Clases de 1 hora</li>
+            <li class="price-box__list-el">Acceso a la app</li>
+<br>
+          </ul>
+            <a class="btn btn--violet btn--width button" style="color: white;"  href="https://wa.me/5215577676657">Agendar</a>
+        </div>
+
+      </div>
+
+
+     </div> 
+
+
+       <div class="swiper-pagination"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+</div>
+    
+      </div>
+
+
+
+
+
+      <!-- Third-->    
+
+
+       <div class="col-md-4 col-sm-4 price-box price-box--purple">
+          <div class="swiper swiper-container-main">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+          Curso Intersemestral
+          </h1>
+  <p class="price-box__people">
+            Curso Intensivo por temporada
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>450<span class="price-box__discount--light">.00</span>
+          </h2>
+           <h3 class="price-box__price">
+           AGOTADO
+          </h3>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+            <li class="price-box__list-el">6 Clases de 1 hora</li>
+            <li class="price-box__list-el">Curso intensivo</li>
+<br>
+          </ul>
+            <a class="btn btn--purple btn--width" style="color: white;">Agendar</a>
+        </div>
+
+      </div>
+
+
+       <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Descuento a Estudiantes UNAM
+          </h1>
+ <p class="price-box__people">
+            Clases Presenciales
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>350<span class="price-box__discount--light">/mes</span>
+          </h2>
+           <h3 class="price-box__price" style="text-decoration: line-through;">
+           $450/mes
+          </h3>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+        <li class="price-box__list-el">4 clases de 1 hora</li>
+            <li class="price-box__list-el">1 clase a la semana</li>
+          <li class="price-box__list-el">Acceso a la app</li>
+<br>
+          </ul>
+      
+            <a class="btn btn--blue btn--width button" style="color: white;" href="https://www.mozart.studio/inscripciones">Agendar</a>
+          
+        </div>
+
+      </div>
+
+
+       <div class="swiper-slide">
+
+        <div class="price-box__wrap">
+          <div class="price-box__img"></div>
+          <h1 class="price-box__title">
+           Descuento a Estudiantes UNAM II
+          </h1>
+ <p class="price-box__people">
+            Clases Presenciales
+          </p>
+          <h2 class="price-box__discount">
+            <span class="price-box__dollar">$</span>700<span class="price-box__discount--light">/mes</span>
+          </h2>
+           <h3 class="price-box__price" style="text-decoration: line-through;">
+           $750/mes
+          </h3>
+          <p class="price-box__feat">
+            Servicios
+          </p>
+          <ul class="price-box__list">
+            <li class="price-box__list-el">8 Clases de 1 hora</li>
+            <li class="price-box__list-el">2 clases a la semana</li>
+          <li class="price-box__list-el">Acceso a la app</li>
+              <li class="price-box__list-el">Reserva de pianos para prácticas</li>
+<br>
+          </ul>
+      
+            <a class="btn btn--blue btn--width button" style="color: white;" href="https://www.mozart.studio/inscripciones">Agendar</a>
+          
+        </div>
+
+      </div>
+
+
+
+     </div> 
+
+
+       <div class="swiper-pagination"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+</div>
+    
+      </div>
+
+ <!-- End-->
+
+    
     </div>
-  </script>  
+  </div>
+  </div>
+
+  <div id="contact" class="contact-info" style="background-color: #202830;">
+    <div class="container text-center strong-shadow ">
+  
+      <h3 class="card-title"> Cupo limitado </h3>  
+      <h2 class="card-title">¡Aparta tu lugar!</h2> <br>
+     
+      <br>
+    </div>    
+  </div>
+  
+  <div class="text-center" style="margin-top: 15px;">
+            <button class="btn btn-outline-light mb-2" id="redirectButton">Más información</button>
+          </div>
+  
+  <section class="trial-block shadow3">
+             <div class="social-overlap process-scetion ">
+              <div class="container">
+                  <div class="row justify-content-center">
+                          <div class="social-bar">
+                              <div class="social-icons text-center">
+                                 
+                                  
+                <a href="https://www.facebook.com/mozart.stdio" class="slider-nav-item"><i class="ri-facebook-fill"></i></a>
+                                
+                                 
+               <a href="https://www.instagram.com/mozart.studio_academy/"  class="slider-nav-item"><i class="ri-instagram-line"></i></a>
+                                 
+                                  <a href="https://www.youtube.com/@TallerdePiano" class="slider-nav-item"><i class="ri-youtube-fill"></i></a>
+                                 <a href="https://maps.app.goo.gl/Jhf1sMdnQ7QRA3RP9"  class="slider-nav-item"><i class="ri-map-pin-line"></i></a> <!-- https://twitter.com/m0zart_studio -->
+                                  <a href="https://wa.me/5215577676657"  class="slider-nav-item"><i class="ri-whatsapp-line"></i></a>
+                             
+                              </div>
+                          </div>
+                  </div>
+              </div>
+          </div>   
+</section>
+  
+  
+
+  <footer class="fixed-bottom">
+      <div class="col-md-2 col-xs-6">
+       <h1 class="footer__title">mozart<span class="footer__light">.studio</span></h1>   
+      </div> 
+  </footer>
+
+
+  
+  
+  <div id="modal1" class="modal-container modal-hidden">
+  <div class="modal-background">
+    <div class="modal"> 
+     
+
+    <iframe id="drive" src=" https://drive.google.com/file/d/1Nmy8BYCSViAk7L8vMsdvi5uFXn1ftzhs/preview" frameborder="0" ></iframe>
+
+    </div>
+  </div>
+</div>
+  
+  
+<div id="modal2" class="modal-container modal-hidden">
+  <div class="modal-background">
+    <div class="modal"> 
+     
+
+     <img src="https://lh3.googleusercontent.com/d/1XvXn7m5uhpToi1ZvaOo4ilBTLZJPyAfN">
+
+    </div>
   </div>
 </div>
 
-  </section>
 
- <section class="preloader" >
-    <div id="loading">&nbsp;</div>
-    <div id="loading-text">Cargando</div>
-  </section> 
+
+
+
+ <div ng-app="myApp"> 
+  <div id="modal3" class="modal-container modal-hidden">
+  <div class="modal-background">
+    <div class="modal form-insc"> 
+       
+<div class="card" ng-controller="FormController1" >
+              <div class="card-body">
+                <h4>Formulario de registro</h4>
+                <div class="settings-profile">
+                  <div class="form-row mt-4">
+                    <div class="col-md-6">
+                      <label for="dayList">Día</label>
+                      <select id="dayList" class="form-control" ng-model="formData.dia" ng-change="updateHourList()" ng-options="day for day in days">
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label ng-if="formData.dia" for="hourList">Hora</label>
+                      <select ng-if="formData.dia" id="hourList" class="form-control" ng-model="formData.hora" ng-options="hour for hour in hours">
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label ng-if="formData.hora" for="dateClass">Fecha de tu primer clase</label>
+                      <select ng-if="formData.hora" id="dateClass" class="form-control" ng-model="formData.fecha" ng-options="date for date in dates">
+                      </select>
+                    </div>
+                    
+                     <div class="col-md-6">
+                      <label for="formFirst" ng-if="formData.fecha">Nombre</label>
+                      <input id="formFirst" type="text" class="form-control" placeholder="Nombre completo" autocomplete="off" ng-model="formData.nombre" ng-if="formData.fecha">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phone" ng-if="formData.fecha">Teléfono</label>
+                      <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" maxlength="10" id="phone" autocomplete="off" placeholder="Número de teléfono" ng-model="formData.telefono" ng-if="formData.fecha">
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+               </div>  
+                <div class="modal-footer col-md-12">
+                  <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                </div>
+            </div>
+
+    </div>
+  </div>
+</div>
+
+
+ <div id="modal4" class="modal-container modal-hidden">
+  <div class="modal-background">
+    <div class="modal form-insc"> 
+       
+<div class="card" ng-controller="FormController2" >
+              <div class="card-body">
+                <h4>Formulario de registro</h4>
+                <div class="settings-profile">
+                  <div class="form-row mt-4">
+                    <div class="col-md-6">
+                      <label for="dayList">Día</label>
+                      <select id="dayList" class="form-control" ng-model="formData.dia" ng-change="updateHourList()" ng-options="day for day in days">
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label ng-if="formData.dia" for="hourList">Hora</label>
+                      <select ng-if="formData.dia" id="hourList" class="form-control" ng-model="formData.hora" ng-options="hour for hour in hours">
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label ng-if="formData.hora" for="dateClass">Fecha de tu primer clase</label>
+                      <select ng-if="formData.hora" id="dateClass" class="form-control" ng-model="formData.fecha" ng-options="date for date in dates">
+                      </select>
+                    </div>
+                    
+                     <div class="col-md-6">
+                      <label for="formFirst" ng-if="formData.fecha">Nombre</label>
+                      <input id="formFirst" type="text" class="form-control" placeholder="Nombre completo" autocomplete="off" ng-model="formData.nombre" ng-if="formData.fecha">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phone" ng-if="formData.fecha">Teléfono</label>
+                      <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" maxlength="10" id="phone" autocomplete="off" placeholder="Número de teléfono" ng-model="formData.telefono" ng-if="formData.fecha">
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+               </div>  
+                <div class="modal-footer col-md-12">
+                  <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                </div>
+            </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
 
 </body>
 
-
-<script>
-
-  var app = angular.module('ionicApp', ['ionic']);
-app
-.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-
-   $stateProvider
-    .state('menu', {
-      url: "/menu",
-      abstract: true,
-      templateUrl: "menu.html",
-      controller: 'MenuCtrl'
-    })
-    .state('menu.tabs', {
-      url: "/tab",
-      views: {
-        'menuContent' :{
-          templateUrl: "tabs.html"
-        }
-      }
-    })
-   .state('menu.tabs.reel', {
-      url: "/reel",
-      views: {
-        'reel-tab': {
-          templateUrl: "reel.html"
-        }
-      }
-    })
-    .state('menu.tabs.agenda', {
-      url: "/agenda",
-      views: {
-        'agenda-tab': {
-          templateUrl: "agenda.html"
-        }
-      }
-    })
-  .state('menu.tabs.profile', {
-      url: "/profile",
-      views: {
-        'profile-tab': {
-          templateUrl: "profile.html"
-        }
-      }
-    })
-    .state('menu.lessons', {
-      url: "/lessons",
-      views: {
-        'menuContent': {
-          templateUrl: "lessons.html"
-        }
-      }
-    }) 
- .state('menu.chat', {
-      url: "/chat",
-      views: {
-        'menuContent': {
-          templateUrl: "chat.html"
-        }
-      }
-    })
-    .state('menu.resources', {
-      url: "/resources",
-      views: {
-        'menuContent': {
-          templateUrl: "resources.html"
-        }
-      }
-    })
-   .state('menu.metronome', {
-      url: "/metronome",
-      views: {
-        'menuContent': {
-          templateUrl: "metronome.html"
-        }
-      }
-    })
-   .state('menu.notereader', {
-      url: "/notereader",
-      views: {
-        'menuContent': {
-          templateUrl: "notereader.html"
-        }
-      }
-    })
-
-  .state('menu.chords', {
-      url: "/chords",
-      views: {
-        'menuContent': {
-          templateUrl: "chords.html"
-        }
-      }
-    })
-  .state('menu.circlefifths', {
-      url: "/circlefifths",
-      views: {
-        'menuContent': {
-          templateUrl: "circlefifths.html"
-        }
-      }
-    })
-   .state('menu.library', {
-      url: "/library",
-      views: {
-        'menuContent': {
-          templateUrl: "library.html"
-        }
-      }
-    })
- 
-   .state('menu.manuals', {
-      url: "/manuals",
-      views: {
-        'menuContent': {
-          templateUrl: "manuals.html",
-          controller: "booksCtrl1"
-        }
-      }
-    })
-
-   .state('menu.repertoire', {
-      url: "/repertoire",
-      views: {
-        'menuContent': {
-          templateUrl: "repertoire.html",
-          controller: "booksCtrl2"
-        }
-      }
-    })
-
-     .state('menu.books', {
-      url: "/books",
-      views: {
-        'menuContent': {
-          templateUrl: "books.html",
-          controller: "booksCtrl3"
-        }
-      }
-    })
-  
-    .state('menu.about', {
-      url: "/about",
-      views: {
-        'menuContent': {
-          templateUrl: "about.html"
-        }
-      }
-    })
-  .state('menu.regulation', {
-      url: "/regulation",
-      views: {
-        'menuContent': {
-          templateUrl: "regulation.html",
-          controller: "AccordianCtrl"
-        }
-      }
-    })
-
-  .state('menu.aboutus', {
-      url: "/aboutus",
-      views: {
-        'menuContent': {
-          templateUrl: "aboutus.html"
-        }
-      }
-    })
-    ;
-
-  $urlRouterProvider.otherwise("menu/tab/profile");
-  $ionicConfigProvider.tabs.position('bottom'); 
-})
-
- .controller('AppCtrl', function() {
-  ionic.Platform.ready(function() {
-  });
- })       
-
-.controller('MenuCtrl', ['$http', '$scope', '$ionicSideMenuDelegate', '$ionicModal', function($http, $scope, $ionicSideMenuDelegate, $ionicModal) {
-  $scope.toggleRight = function() {
-    $ionicSideMenuDelegate.toggleRight();
-  };
-
-  $scope.logout = function() {
-    $('.preloader').fadeIn('slow');
-
-    var requestData = {
-      action: "removeToken",
-      token: localStorage.getItem('MStoken')
-    };
-
-    var config = {
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      followRedirects: true
-    };
-
-    $http.post('https://script.google.com/macros/s/AKfycbxXD35z5FSf_m_dwBt5qcBwWq2L7IDc7KBrYGfix6hUa4kvJ1TFpjU82NltFXezUroGgQ/exec', requestData, config)
-      .then(function(response) {
-        if (response.data.status === "success") {
-          localStorage.removeItem('MStoken');
-          $('.preloader').css({ 'display': 'none' });
-          $('.loginSection').fadeIn('slow');
-          $('.mainSection').css({ 'display': 'none' });
-          loadForm();
-        }
-      })
-      .catch(function(error) {
-        console.error('Error during logout:', error);
-        // Ocultar preloader en caso de error
-        $('.preloader').css({ 'display': 'none' });
-      });
-  };
-
-
- }])
-
-
-
-   .controller('booksCtrl1', ['$http', '$scope', '$sce', function($http, $scope, $sce){
-    $scope.trustAsResourceUrl = function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-    
-     $scope.selectedManualUrl = '';
-
-    $scope.showModal = function(index) {
-      $scope.selectedManualUrl = 'https://drive.google.com/file/d/' + $scope.manuals[index].id + '/preview';
-        document.getElementById('modalPDF').classList.add('four');
-    };
-
-    $scope.hideModal = function(index) {
-        const modal = document.getElementById('modalPDF');
-        modal.classList.add('out');
-        setTimeout(() => {
-            modal.classList.remove('four', 'out');
-        }, 400);
-    };
-
-    
-/* $scope.manuals = [ 
-      {'title': 'Bloque 1 - Nivel 2','background': 'https://lh3.googleusercontent.com/d/1qsgmUvohMMn8LcQZLp-Zkk283MV2VmNy', 'id': '1zs8OzO57s1b0MTavriKWjMohnLjr39-d'},
-      {'title': 'Bloque 3 - Nivel 1','background': 'https://lh3.googleusercontent.com/d/1Uf_sUg2ELZPF8t0fcuCdH6ZZOWrwzghM', 'id': '1VuxMiv3W89OBAzxXaz6kzBkEyRxonnJB'},
-      {'title': 'Bloque 2 - Nivel 1','background': 'https://lh3.googleusercontent.com/d/1Uf_sUg2ELZPF8t0fcuCdH6ZZOWrwzghM', 'id': '10Q34O2uDPaj5ZG7bpYpx8BGHZ4Q18ZLB'},
-      {'title': 'Bloque 1 - Nivel 1','background': 'https://lh3.googleusercontent.com/d/1Uf_sUg2ELZPF8t0fcuCdH6ZZOWrwzghM', 'id': '1Kghxri_BvRE0Ho4c2vMfrdBGp8HTmrGJ'},
-      {'title': 'Bloque 3 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1vYZFwqvHFg6m097Ivk4uRGAY38-EUvEu'},
-      {'title': 'Bloque 2 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1nxK06XODrHt2J6lScQz4JjthmPoc16Ec'},
-      {'title': 'Bloque 1 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1bufcRACzv0QKKJDoc6RYhC1m7irb-UPa'}
-    ];*/
-
-       $scope.manuals = [ 
-      {'title': 'Bloque 1 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1bufcRACzv0QKKJDoc6RYhC1m7irb-UPa'}
-    ];
-    
-    
-}])
-    .controller('booksCtrl2', ['$http', '$scope', '$sce', function($http, $scope, $sce){
-    $scope.trustAsResourceUrl = function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-    
-     $scope.selectedManualUrl = '';
-
-    $scope.showModal = function(index) {
-      $scope.selectedManualUrl = 'https://drive.google.com/file/d/' + $scope.manuals[index].id + '/preview';
-        document.getElementById('modalPDF2').classList.add('four');
-    };
-
-    $scope.hideModal = function(index) {
-        const modal = document.getElementById('modalPDF2');
-        modal.classList.add('out');
-        setTimeout(() => {
-            modal.classList.remove('four', 'out');
-        }, 400);
-    };
-
-    
- $scope.manuals = [ 
-      {'title': 'Bloque 3 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1vYZFwqvHFg6m097Ivk4uRGAY38-EUvEu'},
-      {'title': 'Bloque 2 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1nxK06XODrHt2J6lScQz4JjthmPoc16Ec'},
-      {'title': 'Bloque 1 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1bufcRACzv0QKKJDoc6RYhC1m7irb-UPa'}
-    ];
-    
-    
-}])
-    .controller('booksCtrl3', ['$http', '$scope', '$sce', function($http, $scope, $sce){
-    $scope.trustAsResourceUrl = function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-    
-     $scope.selectedManualUrl = '';
-
-    $scope.showModal = function(index) {
-      $scope.selectedManualUrl = 'https://drive.google.com/file/d/' + $scope.manuals[index].id + '/preview';
-        document.getElementById('modalPDF3').classList.add('four');
-    };
-
-    $scope.hideModal = function(index) {
-        const modal = document.getElementById('modalPDF3');
-        modal.classList.add('out');
-        setTimeout(() => {
-            modal.classList.remove('four', 'out');
-        }, 400);
-    };
-
-    
- $scope.manuals = [ 
-      {'title': 'Bloque 3 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1vYZFwqvHFg6m097Ivk4uRGAY38-EUvEu'},
-      {'title': 'Bloque 2 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1nxK06XODrHt2J6lScQz4JjthmPoc16Ec'},
-      {'title': 'Bloque 1 - Nivel P','background': 'https://lh3.googleusercontent.com/d/12_KSNMB0Z3z9knY_8vIofHT3Xvl-JUj-', 'id': '1bufcRACzv0QKKJDoc6RYhC1m7irb-UPa'}
-    ];
-    
-    
-}])
-  .controller('AccordianCtrl', function($scope){
-    $scope.groups = [{
-        "heading": "Matrícula",
-        "body": [
-            {"no":1, "name":"Asignación de horario", "text":"El alumno elegirá un horario de clase dentro de los disponibles en la academia, es posible elegirlo para comenzar a la media (por ejemplo de 2:30 a 3:30) siempre y cuando se acuerde con la administración. "},
-            {"no":2, "name":"Cambio de horario", "text":"Para tramitar un cambio de horario o plan de pago, se deberá realizar al término de la mensualidad vigente. "}
-        ]
-    },{
-        "heading": "Asistencias",
-        "body": [
-           {"no":1, "name":"raj", "text":"25"},
-            {"no":2, "name":"kumar", "text":"24"},
-            {"no":3, "name":"kumar", "text":"24"}
-        ]
-    }, {
-        "heading": "Inasistencias",
-        "body": [
-            {"sno":10, "name":"John", "age":"25", "sex":"M", "status":"Pass"},
-            {"sno":20, "name":"Ravi", "age":"24", "sex":"M", "status":"fail"},
-            {"sno":30, "name":"Priya", "age":"26", "sex":"F", "status":"Fail"}
-        ]
-    }, {
-        "heading": "Retardos",
-        "body": [
-            {"sno":10, "name":"John", "age":"25", "sex":"M", "status":"Pass"},
-            {"sno":20, "name":"Ravi", "age":"24", "sex":"M", "status":"fail"},
-            {"sno":30, "name":"Priya", "age":"26", "sex":"F", "status":"Fail"}
-        ]
-    }
-                    
-                    ]; 
-
-    /*
-    * if given group is the selected group, deselect it
-    * else, select the given group
-    */
-    $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
-            $scope.shownGroup = null;
-        } else {
-            $scope.shownGroup = group;
-        }
-    };
-
-    $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
-    };
-
-    $scope.isDetailShown = function(bodyitem) {
-        return $scope.shownDetail === bodyitem;
-    };
-
-    $scope.toggleDetail = function(bodyitem) {
-        if ($scope.isDetailShown(bodyitem)) {
-            $scope.shownDetail = null;
-        } else {
-            $scope.shownDetail = bodyitem;
-        }
-    };
+  <script>
+    $(".navbar-nav>li>a").on("click", function() {
+  $(".navbar-collapse").collapse("hide");
 });
 
-    </script>
+document.getElementById('redirectButton').addEventListener('click', function() {
+  window.location.href = 'https://wa.me/5215577676657?text=Hola,%20me%20interesa%20recibir%20informaci%C3%B3n%20acerca%20de%20las%20clases%20de%20piano%20%F0%9F%8E%B9'; 
+});
 
-
-
-
-
-
-
-<script>
-$(window).on('load', function() { 
-  var storedToken = localStorage.getItem('MStoken');
-  if (storedToken) {
-    var api = "https://script.google.com/macros/s/AKfycbxXD35z5FSf_m_dwBt5qcBwWq2L7IDc7KBrYGfix6hUa4kvJ1TFpjU82NltFXezUroGgQ/exec";
-
-    var validationData = {
-      redirect: "follow",
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      body: JSON.stringify({
-        action: "validateToken",
-        token: storedToken
-      })
-    };
-
-  fetch(api, validationData)
-  .then(response => response.text())
-  .then(res => {
-    var validation = JSON.parse(res);
-    if (validation.status == "success") {
-      $('.preloader').css({'display':'none'})  
-      $('.loginSection').css({'display':'none'})  
-      $('.mainSection').fadeIn('slow')
-      var url = window.location.href;
-        if(url == "https://app.mozart.studio/#/menu/tab/agenda"){
-          var iframe = document.getElementById('agendaFrame');
-        iframe.src = 'https://app.mozart.studio/agenda';
-        }
-      //loadData(api, storedToken, "si");    
+function toggleCard() {
+    const frontSide = document.getElementById("front-1");
+    const backSide = document.getElementById("back-1");
+    if (frontSide.classList.contains("showGreen")) {
+      frontSide.classList.remove("showGreen");
+      backSide.classList.remove("showRed");
     } else {
-      localStorage.removeItem('MStoken');
-      $('.preloader').css({'display':'none'});
-      $('.loginSection').fadeIn('slow') 
-      $('.mainSection').css({'display':'none'});
-      loadForm();
+      frontSide.classList.add("showGreen");
+      backSide.classList.add("showRed");
     }
-  })
-  } else {
-    $('.preloader').css({'display':'none'})  
-    $('.loginSection').fadeIn('slow') 
-    $('.mainSection').css({'display':'none'});
-    loadForm();
   }
-});
-
-  
-  
- function login(button) {
-  var $button = $(button);
-  var email = document.getElementById('email-login').value;
-  var password = document.getElementById('password-login').value;
-
-  if(email === "" && password === "" ){
-    alert("Información de ingreso inválida")
-  }else{
-  $button.button('loading');
-  var api = "https://script.google.com/macros/s/AKfycbxXD35z5FSf_m_dwBt5qcBwWq2L7IDc7KBrYGfix6hUa4kvJ1TFpjU82NltFXezUroGgQ/exec";
-
-  var validationData = {
-    redirect: "follow",
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify({
-      action: "validateUser",
-      email: email,
-      password: password
-    })
-  };
-
-  fetch(api, validationData)
-    .then(response => response.text())
-    .then(res => {
-      var validation = JSON.parse(res);
-      if (validation.status == "success") {
-        localStorage.setItem('MStoken', validation.token);            
-        var iframe = document.getElementById('profileFrame');
-        iframe.src = 'https://app.mozart.studio/profile';
-        $('.preloader').css({'display':'none'})  
-        $('.loginSection').css({'display':'none'})  
-        $('.mainSection').fadeIn('slow')
-        document.getElementById('email-login').value = ''; 
-        document.getElementById('password-login').value = '';
-        $button.button('reset');
-        //loadData(api, email, "no");    
-      } else {
-        alert('Información de ingreso inválida');
-        $button.button('reset');
-      }
-    })
-  }
-}
-
     
- function recover(button) {
-  var $button = $(button);
+$(document).ready(function() {
+  $('.button').click(function() {
+    var modalId = $(this).data('modal');
+    $('#' + modalId).removeClass('modal-hidden').addClass('four');
+    $('body').addClass('modal-active');
+  });
+
+  $('.modal-container').click(function() {
+    $(this).addClass('out');
+    $('body').removeClass('modal-active');
+    var modal = $(this);
+    setTimeout(function() {
+      modal.removeClass('four out').addClass('modal-hidden');
+    }, 500); // Ajusta el tiempo según la duración de tu animación
+  });
   
-  var mail = document.getElementById('recover').value;
-  var mail2 = document.getElementById('recover2').value;
+  $('.form-insc').click(function(event) {
+                event.stopPropagation();
+            });
+});
+    
+    
+    
+<!-- Initialize Swiper -->
+var galleryThumbs = new Swiper('.gallery-thumbs', {
 
-  if(mail != mail2){
-    alert("Los correos no coinciden. Por favor, verifique la información y vuelva a intentarlo.")
-  }else if(mail === ""){
-    alert("Por favor, ingrese su correo electrónico.")
-  }else{
-    $button.button('loading');
-  var api = "https://script.google.com/macros/s/AKfycbxXD35z5FSf_m_dwBt5qcBwWq2L7IDc7KBrYGfix6hUa4kvJ1TFpjU82NltFXezUroGgQ/exec";
-  var validationData = {
-    redirect: "follow",
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify({
-      action: "sendPIN",
-      email: mail
-    })
-  };
-
-  fetch(api, validationData)
-    .then(response => response.text())
-    .then(res => {
-      var validation = res;
-      document.getElementById('recover').value = ''; 
-      document.getElementById('recover2').value = '';
-      $button.button('reset');  
-      if (validation) {
-        alert("¡Exito! Tu contraseña ha sido enviada a tu correo.")
-      }else{
-        alert("Error. Tu correo no se encuentra en nuestra base de datos. Contacta a soporte.")
-      } 
-    })
-  }
-}
-/*
-function loadData(api, mail, encryption) {
-  var userData = {
-    redirect: "follow",
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify({
-      action: "getData",
-      email: mail,
-      encryption: encryption
-    })
-  };
-
-  fetch(api, userData)
-    .then(answer => answer.text())
-    .then(ans => {
-      //var content = JSON.parse(ans);
-      app.controller('Controller1', ['$http', '$scope', function($http, $scope) {
-        $scope.userData = JSON.parse(ans) || {};          
-      }]);
-      angular.bootstrap(document, ['studentsApp']);
-      showMain(); 
-    });
-  }*/
-
-
-
-function loadForm(){
-$(document).ready(function(){
-  $('#goRight').on('click', function(){
-    $('#slideBox').animate({
-      'marginLeft' : '0'
-    });
-    $('.topLayer').animate({
-      'marginLeft' : '100%'
-    });
-  });
-  $('#goLeft').on('click', function(){
-    if (window.innerWidth > 769){
-      $('#slideBox').animate({
-        'marginLeft' : '50%'
-      });
-    }
-    else {
-      $('#slideBox').animate({
-        'marginLeft' : '20%'
-      });
-    }
-    $('.topLayer').animate({
-      'marginLeft': '0'
-    });
-  });
 });
 
-/* ====================== *
- *  Initiate Canvas       *
- * ====================== */
-paper.install(window);
-paper.setup(document.getElementById("canvas"));
 
-// Paper JS Variables
-var canvasWidth, 
-    canvasHeight,
-    canvasMiddleX,
-    canvasMiddleY;
+var swiper = new Swiper('.swiper-container-main', {
+  autoHeight: true, //enable auto height
 
-var shapeGroup = new Group();
+  //runCallbacksOnInit: true,
+  observer: true,
+  observeParents: true,
+  observeChildren: true,
+  spaceBetween: 0,
 
-var positionArray = [];
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  loop: true,
+  preloadImages: false,
+  // Enable lazy loading
+  lazy: true,
+  lazy: {
+    loadPrevNext: true,
+  },
 
-function getCanvasBounds() {
-  // Get current canvas size
-  canvasWidth = view.size.width;
-  canvasHeight = view.size.height;
-  canvasMiddleX = canvasWidth / 2;
-  canvasMiddleY = canvasHeight / 2;
-  // Set path position
-  var position1 = {
-    x: (canvasMiddleX / 2) + 100,
-    y: 100, 
-  };
+  keyboard: {
+    enabled: true,
+  },
 
-  var position2 = {
-    x: 200,
-    y: canvasMiddleY, 
-  };
-
-  var position3 = {
-    x: (canvasMiddleX - 50) + (canvasMiddleX / 2),
-    y: 150, 
-  };
-
-  var position4 = {
-    x: 0,
-    y: canvasMiddleY + 100, 
-  };
-
-  var position5 = {
-    x: canvasWidth - 130,
-    y: canvasHeight - 75, 
-  };
-
-  var position6 = {
-    x: canvasMiddleX + 80,
-    y: canvasHeight - 50, 
-  };
-  
-  var position7 = {
-    x: canvasWidth + 60,
-    y: canvasMiddleY - 50, 
-  };
-  
-  var position8 = {
-    x: canvasMiddleX + 100,
-    y: canvasMiddleY + 100, 
-  };
-
-  positionArray = [position3, position2, position5, position4, position1, position6, position7, position8];
-  };
-
-
-/* ====================== *
- * Create Shapes          *
- * ====================== */
-function initializeShapes() {
-  // Get Canvas Bounds
-  getCanvasBounds();
-
-  var shapePathData = [
-    'M231,352l445-156L600,0L452,54L331,3L0,48L231,352', 
-    'M0,0l64,219L29,343l535,30L478,37l-133,4L0,0z', 
-    'M0,65l16,138l96,107l270-2L470,0L337,4L0,65z',
-    'M333,0L0,94l64,219L29,437l570-151l-196-42L333,0',
-    'M331.9,3.6l-331,45l231,304l445-156l-76-196l-148,54L331.9,3.6z',
-    'M389,352l92-113l195-43l0,0l0,0L445,48l-80,1L122.7,0L0,275.2L162,297L389,352',
-    'M 50 100 L 300 150 L 550 50 L 750 300 L 500 250 L 300 450 L 50 100',
-    'M 700 350 L 500 350 L 700 500 L 400 400 L 200 450 L 250 350 L 100 300 L 150 50 L 350 100 L 250 150 L 450 150 L 400 50 L 550 150 L 350 250 L 650 150 L 650 50 L 700 150 L 600 250 L 750 250 L 650 300 L 700 350 '
-  ];
-
-  for (var i = 0; i <= shapePathData.length; i++) {
-    // Create shape
-    var headerShape = new Path({
-      strokeColor: 'rgba(255, 255, 255, 0.5)',
-      strokeWidth: 2,
-      parent: shapeGroup,
-    });
-    // Set path data
-    headerShape.pathData = shapePathData[i];
-    headerShape.scale(2);
-    // Set path position
-    headerShape.position = positionArray[i];
+  effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 60,
+    slideShadows: false,
+  },
+  loop: true,
+  thumbs: {
+    swiper: galleryThumbs
   }
-};
 
-initializeShapes();
+});
+    
+    
+    
+    
+    
+    
+angular.module('myApp', [])
+  .controller('FormController1', ['$scope', function($scope) {
+    $scope.formData = {};
 
-/* ====================== *
- * Animation              *
- * ====================== */
-view.onFrame = function paperOnFrame(event) {
-  if (event.count % 4 === 0) {
-    // Slows down frame rate
-    for (var i = 0; i < shapeGroup.children.length; i++) {
-      if (i % 2 === 0) {
-        shapeGroup.children[i].rotate(-0.1);
-      } else {
-        shapeGroup.children[i].rotate(0.1);
+
+    $scope.classtime = {
+      lunes: ["12:00 a 13:00 Hrs", "13:00 a 14:00 Hrs", "14:00 a 15:00 Hrs", "15:00 a 16:00 Hrs", "16:00 a 17:00 Hrs", "17:00 a 18:00 Hrs", "18:00 a 19:00 Hrs"],
+      martes: ["12:00 a 13:00 Hrs", "13:00 a 14:00 Hrs", "14:00 a 15:00 Hrs", "15:00 a 16:00 Hrs", "16:00 a 17:00 Hrs", "17:00 a 18:00 Hrs", "18:00 a 19:00 Hrs"],
+      miercoles: ["12:00 a 13:00 Hrs", "13:00 a 14:00 Hrs", "14:00 a 15:00 Hrs", "15:00 a 16:00 Hrs", "16:00 a 17:00 Hrs", "17:00 a 18:00 Hrs", "18:00 a 19:00 Hrs"],
+      jueves: ["12:00 a 13:00 Hrs", "13:00 a 14:00 Hrs", "14:00 a 15:00 Hrs", "15:00 a 16:00 Hrs", "16:00 a 17:00 Hrs", "17:00 a 18:00 Hrs", "18:00 a 19:00 Hrs"],
+      viernes: ["11:00 a 12:00 Hrs", "12:00 a 13:00 Hrs", "13:00 a 14:00 Hrs", "14:00 a 15:00 Hrs", "15:00 a 16:00 Hrs"],
+      sabado: ["9:00 a 10:00 Hrs", "10:00 a 11:00 Hrs", "11:00 a 12:00 Hrs", "14:00 a 15:00 Hrs", "15:00 a 16:00 Hrs"],
+      domingo: ["9:00 a 10:00 Hrs", "10:00 a 11:00 Hrs", "11:00 a 12:00 Hrs", "12:00 a 13:00 Hrs"]
+    };
+
+    $scope.capacity = {
+      lunes: {
+        "12:00 a 13:00 Hrs": 2,
+        "13:00 a 14:00 Hrs": 2,
+        "14:00 a 15:00 Hrs": 1,
+        "15:00 a 16:00 Hrs": 1,
+        "16:00 a 17:00 Hrs": 2,
+        "17:00 a 18:00 Hrs": 1,
+        "18:00 a 19:00 Hrs": 1
+      },
+      martes: {
+         "12:00 a 13:00 Hrs": 2,
+        "13:00 a 14:00 Hrs": 2,
+        "14:00 a 15:00 Hrs": 1,
+        "15:00 a 16:00 Hrs": 1,
+        "16:00 a 17:00 Hrs": 2,
+        "17:00 a 18:00 Hrs": 1,
+        "18:00 a 19:00 Hrs": 1
+      },
+      miercoles: {
+        "12:00 a 13:00 Hrs": 2,
+        "13:00 a 14:00 Hrs": 2,
+        "14:00 a 15:00 Hrs": 1,
+        "15:00 a 16:00 Hrs": 1,
+        "16:00 a 17:00 Hrs": 2,
+        "17:00 a 18:00 Hrs": 1,
+        "18:00 a 19:00 Hrs": 1
+      },
+      jueves: {
+        "12:00 a 13:00 Hrs": 2,
+        "13:00 a 14:00 Hrs": 2,
+        "14:00 a 15:00 Hrs": 1,
+        "15:00 a 16:00 Hrs": 1,
+        "16:00 a 17:00 Hrs": 2,
+        "17:00 a 18:00 Hrs": 1,
+        "18:00 a 19:00 Hrs": 1
+      },
+      viernes: {
+        "11:00 a 12:00 Hrs": 1,
+        "12:00 a 13:00 Hrs": 2,
+        "13:00 a 14:00 Hrs": 1,
+        "14:00 a 15:00 Hrs": 2,
+        "15:00 a 16:00 Hrs": 2,
+      },
+      sabado: {
+        "9:00 a 10:00 Hrs": 1,
+        "10:00 a 11:00 Hrs": 3,
+        "11:00 a 12:00 Hrs": 2,
+        "14:00 a 15:00 Hrs": 4,
+        "15:00 a 16:00 Hrs": 2,
+      },
+      domingo: {
+        "9:00 a 10:00 Hrs": 1,
+        "10:00 a 11:00 Hrs": 2,
+        "11:00 a 12:00 Hrs": 3,
+        "12:00 a 13:00 Hrs": 2,
+      }
+    };
+    
+
+        $scope.days = ["Jueves", "Viernes", "Sábado", "Domingo"];
+
+
+    $scope.updateHourList = function() {
+      var plan = $scope.formData.plan;
+      var day = $scope.formData.dia;
+      $scope.dates = getDat(day);
+      const selectedDay = $scope.formData.dia.toLowerCase();
+      const availableHours = $scope.classtime[selectedDay] || [];
+      $scope.hours = availableHours.filter(hour => $scope.capacity[selectedDay][hour] > 0);
+      if (plan.includes("ESTUDIANTE") && day == "Sábado") {
+        $scope.hours = ["13:00 a 14:00 Hrs"];
+      }
+    };
+
+    $scope.submitForm = function() {
+      console.log('Form submitted with:', $scope.formData);
+    };
+
+   
+    
+    function getDat(day) {
+      const options = { weekday: 'long', month: 'long', day: 'numeric' };
+      const date1 = new Date();
+      const currentDay = date1.getDay();
+      var dayOfWeek = getNumDay(day);
+      const daysUntilNextDay = (dayOfWeek + 7 - currentDay) % 7;
+      const daysToAdd = daysUntilNextDay === 0 ? 7 : daysUntilNextDay;
+      date1.setDate(date1.getDate() + daysToAdd);
+      var date2 = new Date(date1);
+      date2.setDate(date2.getDate() + 7);
+  
+      var dat1 = date1.toLocaleDateString("es-mx", options).replace(",", "");
+      var dat2 = date2.toLocaleDateString("es-mx", options).replace(",", "");
+      return [dat1.charAt(0).toUpperCase() + dat1.slice(1), dat2.charAt(0).toUpperCase() + dat2.slice(1)];
+    }
+
+    function getNumDay(day) {
+      switch(day) {
+        case "Domingo":
+          return 0;
+        case "Lunes":
+          return 1;
+        case "Martes":
+          return 2;
+        case "Miércoles":
+          return 3;
+        case "Jueves":
+          return 4;
+        case "Viernes":
+          return 5;
+        case "Sábado":
+          return 6;
+        default:
+          return 0;
       }
     }
-  }
-};
-
-view.onResize = function paperOnResize() {
-  getCanvasBounds();
-
-  for (var i = 0; i < shapeGroup.children.length; i++) {
-    shapeGroup.children[i].position = positionArray[i];
-  }
-
-  if (canvasWidth < 700) {
-    shapeGroup.children[3].opacity = 0;
-    shapeGroup.children[2].opacity = 0;
-    shapeGroup.children[5].opacity = 0;
-  } else {
-    shapeGroup.children[3].opacity = 1;
-    shapeGroup.children[2].opacity = 1;
-    shapeGroup.children[5].opacity = 1;
-  }
-};
-};
+    
+    
+    $scope.cancel = function() {
+        var modal = angular.element(document.getElementById('modal3'));
+        modal.addClass('out');
+        angular.element(document.body).removeClass('modal-active');
+        setTimeout(function() {
+            modal.removeClass('four out').addClass('modal-hidden');
+        }, 500); // Ajusta el tiempo según la duración de tu animación
+    };
+    
+  }])
+.controller('FormController2', ['$scope', function($scope) {
+    $scope.formData = {};
 
 
-</script>
+    $scope.classtime = {
+      lunes: ["19:00 a 20:00 Hrs", "20:00 a 21:00 Hrs", "21:00 a 22:00 Hrs"],
+      martes: ["19:00 a 20:00 Hrs", "20:00 a 21:00 Hrs", "21:00 a 22:00 Hrs"],
+      miercoles: ["19:00 a 20:00 Hrs", "20:00 a 21:00 Hrs", "21:00 a 22:00 Hrs"],
+      jueves: ["19:00 a 20:00 Hrs", "20:00 a 21:00 Hrs", "21:00 a 22:00 Hrs"],
+      sabado: ["12:00 a 13:00 Hrs", "13:00 a 14:00 Hrs"],
+
+    };
+
+    $scope.capacity = {
+      lunes: {
+        "19:00 a 20:00 Hrs": 2,
+        "20:00 a 21:00 Hrs": 2,
+        "21:00 a 22:00 Hrs": 1
+      },
+      martes: {
+        "19:00 a 20:00 Hrs": 2,
+        "20:00 a 21:00 Hrs": 2,
+        "21:00 a 22:00 Hrs": 1
+      },
+      miercoles: {
+        "19:00 a 20:00 Hrs": 2,
+        "20:00 a 21:00 Hrs": 2,
+        "21:00 a 22:00 Hrs": 1
+      },
+      jueves: {
+        "19:00 a 20:00 Hrs": 2,
+        "20:00 a 21:00 Hrs": 2,
+        "21:00 a 22:00 Hrs": 1
+      },
+      viernes: {
+        "11:00 a 12:00 Hrs": 1,
+        "12:00 a 13:00 Hrs": 2,
+        "13:00 a 14:00 Hrs": 1,
+        "14:00 a 15:00 Hrs": 2,
+        "15:00 a 16:00 Hrs": 2,
+      },
+      sabado: {
+        "12:00 a 13:00 Hrs": 1,
+        "13:00 a 14:00 Hrs": 3
+      }
+    };
+    
+
+        $scope.days = ["Lunes", "Martes", "Miércoles", "Jueves", "Sábado"];
+
+
+    $scope.updateHourList = function() {
+      var plan = $scope.formData.plan;
+      var day = $scope.formData.dia;
+      $scope.dates = getDat(day);
+      const selectedDay = $scope.formData.dia.toLowerCase();
+      const availableHours = $scope.classtime[selectedDay] || [];
+      $scope.hours = availableHours.filter(hour => $scope.capacity[selectedDay][hour] > 0);
+      if (plan.includes("ESTUDIANTE") && day == "Sábado") {
+        $scope.hours = ["13:00 a 14:00 Hrs"];
+      }
+    };
+
+    $scope.submitForm = function() {
+      console.log('Form submitted with:', $scope.formData);
+    };
+
+   
+    
+    function getDat(day) {
+      const options = { weekday: 'long', month: 'long', day: 'numeric' };
+      const date1 = new Date();
+      const currentDay = date1.getDay();
+      var dayOfWeek = getNumDay(day);
+      const daysUntilNextDay = (dayOfWeek + 7 - currentDay) % 7;
+      const daysToAdd = daysUntilNextDay === 0 ? 7 : daysUntilNextDay;
+      date1.setDate(date1.getDate() + daysToAdd);
+      var date2 = new Date(date1);
+      date2.setDate(date2.getDate() + 7);
+  
+      var dat1 = date1.toLocaleDateString("es-mx", options).replace(",", "");
+      var dat2 = date2.toLocaleDateString("es-mx", options).replace(",", "");
+      return [dat1.charAt(0).toUpperCase() + dat1.slice(1), dat2.charAt(0).toUpperCase() + dat2.slice(1)];
+    }
+
+    function getNumDay(day) {
+      switch(day) {
+        case "Domingo":
+          return 0;
+        case "Lunes":
+          return 1;
+        case "Martes":
+          return 2;
+        case "Miércoles":
+          return 3;
+        case "Jueves":
+          return 4;
+        case "Viernes":
+          return 5;
+        case "Sábado":
+          return 6;
+        default:
+          return 0;
+      }
+    }
+    
+    
+    $scope.cancel = function() {
+        var modal = angular.element(document.getElementById('modal4'));
+        modal.addClass('out');
+        angular.element(document.body).removeClass('modal-active');
+        setTimeout(function() {
+            modal.removeClass('four out').addClass('modal-hidden');
+        }, 500); // Ajusta el tiempo según la duración de tu animación
+    };
+    
+  }])
+
+
+
+  </script>
+
+</html>
